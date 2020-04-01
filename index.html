@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NDOY3M4N">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Js Script -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <main class="flex__container">
+    <div class="logo__container mr-auto">
+      <img src="images/logo.svg" alt="Base Apparel Logo">
+    </div>
+    <div class="hero__container">
+      <picture>
+        <source srcset="images/hero-desktop.jpg" media="(min-width: 750px)">
+        <img src="images/hero-mobile.jpg" />
+      </picture>
+    </div>
+    <div class="form__container mr-auto">
+      <h1>
+        <span>WE'RE</span><br>
+        COMING<br>
+        SOON
+      </h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store. 
+      Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <form action="#" id="formSub">
+        <div class="form-group">
+          <input type="text" class="input-email" placeholder="Email Address" name="email" />
+          <button type="submit"><img src="images/icon-arrow.svg"></button>
+          <img src="" class="show-icon" />
+        </div>
+        <span class="show-text"></span>
+      </form>
+    </div>
+  </main> 
+</body>
+</html>

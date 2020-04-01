@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === I created a class for center the content of the form__container=== */
+.mr-auto {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-image: url('images/bg-pattern-desktop.svg');
+  background-size: auto;
+}
+
+h1 {
+  color: hsl(0, 6%, 24%);
+  text-align: center;
+  margin: 2rem 0 1.2rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.7rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+p {
+  color: hsl(0, 36%, 70%);
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-email {
+  width: 100%;
+  background: transparent;
+  position: relative;
+  border: 1px solid hsl(0, 36%, 70%);
+  border-radius: 2rem;
+  padding: 1rem 1.2rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.input-email::placeholder {
+  color: hsl(0, 36%, 70%);
+}
+
+.input-email:focus {
+  outline: none;
+  border-width: 2px;
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  padding: 0 2rem;
+  border-radius: 2rem;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px hsla(0, 36%, 70%, 0.5);
+  transition: all .6s ease-in-out;
+}
+
+button:hover,
+button:active {
+  opacity: 0.7;
+}
+
+.show-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5.5rem;
+  display: none;
+}
+
+.show-text {
+  font-size: 0.9rem;
+  padding-left: 1.2rem;
+  display: none;
+}
+
+/* ===Grid Section=== */
+/* In mobile, we stack each section one on another */
+.flex__container {
+  display: grid;
+  grid-template-rows: 6.5rem 1fr;
+  grid-template-areas:
+    "logo"
+    "hero"
+    "form";
+}
+
+/* I define the grid-area here */
+.logo__container { grid-area: logo; align-self: center; }
+.hero__container { grid-area: hero; }
+.form__container { grid-area: form; }
+
+/* In the mobile layout, the img tag is getting a width & height of 100% */
+.hero__container img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===Media Query for Desktop (I'm using a mobile-first approach)=== */
+@media (min-width: 850px) {
+  /* In desktop we set the body to 100vh */
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* I changed the layout of the grid */
+  .flex__container {
+    grid-template-rows: 8rem 1fr;
+    grid-template-areas:
+      "logo hero"
+      "form hero";
+  }
+
+  /* I restyled the h1 & p tag*/
+  h1 {
+    text-align: left;
+    font-size: 3rem;
+    letter-spacing: 1.5rem;
+  }
+  p {
+    text-align: left;
+  }
+
+  /* I changed the width of this class because we don't have the same margin-left in the desktop & mobile layout */
+  /* PS: Please let me know if there is another way to do this */
+  .mr-auto { width: 60%; margin-left: 5rem; }
+  
+  /* The img tag has a 'initial' width so that it cover the whole container */
+  /* PS: Please let me know if there is another way to do this */
+  .hero__container img {
+    width: initial;
+  }
+}
